@@ -1,0 +1,17 @@
+{
+  "name": "fable-advisor",
+  "metadata": {
+    "description": "Advisor-only model-routing pattern for Claude Code: keep your session on a cheap model and consult a Fable 5 read-only advisor at commitment boundaries."
+  },
+  "owner": {
+    "name": "Kevin Hu",
+    "url": "https://github.com/justanotherkevin"
+  },
+  "plugins": [
+    {
+      "name": "fable-advisor",
+      "source": "./",
+      "description": "Read-only Fable 5 advisor subagent for commitment-boundary decisions."
+    }
+  ]
+}

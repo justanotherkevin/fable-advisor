@@ -1,0 +1,17 @@
+{
+  "name": "fable-advisor",
+  "version": "1.0.0",
+  "description": "Consult Claude's most capable model (Fable 5) as a read-only advisor at commitment boundaries, while your session runs on a cheaper model (Sonnet) as the executor.",
+  "author": {
+    "name": "Kevin Hu",
+    "url": "https://github.com/justanotherkevin"
+  },
+  "homepage": "https://github.com/justanotherkevin/fable-advisor",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "model-routing",
+    "fable",
+    "advisor"
+  ]
+}
