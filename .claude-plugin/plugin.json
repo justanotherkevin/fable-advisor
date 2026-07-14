@@ -1,7 +1,7 @@
 {
   "name": "fable-advisor",
-  "version": "1.0.0",
-  "description": "Consult Claude's most capable model (Fable 5) as a read-only advisor at commitment boundaries, while your session runs on a cheaper model (Sonnet) as the executor.",
+  "version": "2.0.0",
+  "description": "Run your session on Claude's most capable model (Fable 5) as a full-time architect: it plans, decomposes, and reviews while a Sonnet worker subagent does the typing.",
   "author": {
     "name": "Kevin Hu",
     "url": "https://github.com/justanotherkevin"

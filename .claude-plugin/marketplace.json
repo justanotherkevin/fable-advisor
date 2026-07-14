@@ -1,7 +1,7 @@
 {
   "name": "fable-advisor",
   "metadata": {
-    "description": "Advisor-only model-routing pattern for Claude Code: keep your session on a cheap model and consult a Fable 5 read-only advisor at commitment boundaries."
+    "description": "Architect-as-orchestrator pattern for Claude Code: your session runs Fable 5 as a full-time architect, delegating all implementation to a Sonnet worker subagent."
   },
   "owner": {
     "name": "Kevin Hu",
@@ -11,7 +11,7 @@
     {
       "name": "fable-advisor",
       "source": "./",
-      "description": "Read-only Fable 5 advisor subagent for commitment-boundary decisions."
+      "description": "Fable 5 architect session with a Sonnet implementation worker and orchestration skill."
     }
   ]
 }

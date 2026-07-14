@@ -1,8 +1,8 @@
 # Fable Advisor
 
-**Keep your session cheap. Consult the smartest model only when it counts.**
+**The smartest model runs the show. Sonnet does the typing.**
 
-This is an advisor-only Claude Code plugin: your session runs on a cheaper model (Sonnet) doing all the reading, writing, and executing, and at commitment boundaries — architecture decisions, migrations, API design, a debugging effort that's failed twice — it consults a read-only `fable-advisor` subagent pinned to **Fable 5**, Anthropic's most capable model. The advisor reads your actual code and returns a verdict in under 300 words. It never implements.
+This is the architect pattern for Claude Code: your session runs on **Fable 5**, Anthropic's most capable model, doing all the planning, decomposition, and review. It never types implementation code itself — every implementation task gets delegated to a `sonnet-worker` subagent, and the architect reviews the worker's verification evidence before accepting the result or sending back a corrected spec.
 
 ## Install
 
@@ -18,27 +18,31 @@ claude plugin marketplace update fable-advisor
 claude plugin update fable-advisor@fable-advisor
 ```
 
-**Even simpler — one file, no plugin install.** Copy [`agents/fable-advisor.md`](agents/fable-advisor.md) into `~/.claude/agents/` directly.
-
 ## Use it
 
-Keep your session on Sonnet:
+Start your session as the architect:
 
 ```
-/model sonnet
+/model fable
 ```
 
-Then just ask for work. Bring the `fable-advisor` agent in yourself at a commitment boundary, or make it automatic by adding this to your project's `CLAUDE.md`:
+Then just describe the task:
 
 ```
-Before committing to any architecture decision, migration, or refactor
-touching 3+ files, consult the fable-advisor agent and act on its verdict.
+Research and build a Yelp-like food review app.
 ```
+
+The loop:
+
+1. **Plan.** Claude Code's native plan mode kicks in — Fable designs the approach, you approve it.
+2. **Delegate.** The `orchestration` skill routes each piece of implementation to `sonnet-worker` with a concrete spec (objective, files, interfaces, constraints, verification command).
+3. **Review.** The worker reports back with a diff and verification output. Fable reads the evidence — not just the worker's claim — before accepting.
+4. **Continue.** Next chunk goes through the same loop, or the architect reports the whole task done once every piece checks out.
 
 ## Requirements
 
 - Claude Code with a subscription that includes Fable 5 access.
-- **No Fable access?** Edit `agents/fable-advisor.md` and change `model: fable` to `model: opus` — same pattern, one tier down.
+- **No Fable access?** Use `/model opus` for the session instead — same pattern, one tier down.
 
 ## License
 
